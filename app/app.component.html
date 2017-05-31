@@ -1,0 +1,33 @@
+<div>
+    <h4>Custom Input</h4>
+    <form [formGroup]="inputForm">  
+    <custom-input formControlName="fname">
+            Enter data:
+    </custom-input>
+
+    </form>
+    <p>Value : </p><pre>{{ inputForm.value | json }}</pre>
+</div>
+<div>
+    <h4>Custom Text Area (json validate)</h4>
+      
+    <form [formGroup]="textareaForm">
+    <json-input formControlName="result"></json-input>
+    </form>
+
+    <p>form is valid: {{ textareaForm.valid ? 'true' : 'false' }}</p>
+
+    <p>Value:</p>
+    <pre>{{ textareaForm.value | json }}</pre>
+</div>
+<div>
+    <h4>Custom Select</h4>
+
+    <form [formGroup]="selectForm">
+        <custom-select formControlName="selVal">
+        </custom-select>
+    </form>
+
+    <p>value : </p>
+    <pre> {{selectForm.value | json}}</pre>
+</div>

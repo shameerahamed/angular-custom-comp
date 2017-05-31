@@ -1,0 +1,12 @@
+<div>
+    <h4>Custom Components</h4>
+    <form [formGroup]="oneForm">  
+    <custom-input formControlName="fname">
+            Enter data:
+    </custom-input>
+    <json-input formControlName="result"></json-input>
+     <p>form is valid: {{ textareaForm.valid ? 'true' : 'false' }}</p>
+     <custom-select formControlName="selVal"></custom-select>
+    </form>
+    <p>Value : </p><pre>{{ oneForm.value | json }}</pre>
+</div>

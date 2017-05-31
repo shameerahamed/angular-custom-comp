@@ -1,0 +1,32 @@
+<h2>Inside Form</h2>
+    <div>
+      <label>Change min value:</label>
+      <input [(ngModel)]="minValue">
+    </div>
+    <div>
+      <label>Change max value:</label>
+      <input [(ngModel)]="maxValue">
+    </div>
+    <form [formGroup]="form">
+      <p>Control value: {{form.controls.counter.value}}</p>
+      <p>Min Value: {{minValue}}</p>
+      <p>Max Value: {{maxValue}}</p>
+      <p>Form Value:</p>
+      <pre>{{ form.value | json }}</pre>
+      
+      <counter-input
+        formControlName="counter"
+        [counterRangeMax]="maxValue"
+        [counterRangeMin]="minValue"
+        [counterValue]="50"
+        ></counter-input>
+    </form>
+
+    <p *ngIf="!form.valid">Form is invalid!</p>
+
+    
+    <h2>Standalone</h2>
+    <counter-input
+      counterMinValue="0"
+      counterMaxValue="3"
+      [counterValue]="counterValue"></counter-input>
